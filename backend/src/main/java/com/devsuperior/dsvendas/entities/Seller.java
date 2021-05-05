@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Seller {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long in;
+	private Long id;
 	private String name;
 	
 	@OneToMany(mappedBy = "seller")
@@ -29,18 +29,18 @@ public class Seller {
 	
 	public Seller(Long in, String name) {
 		super();
-		this.in = in;
+		this.id = in;
 		this.name = name;
 	}
 
 
-	public Long getIn() {
-		return in;
+	public Long getId() {
+		return id;
 	}
 
 
-	public void setIn(Long in) {
-		this.in = in;
+	public void setId(Long in) {
+		this.id = in;
 	}
 
 
@@ -63,7 +63,7 @@ public class Seller {
 
 	@Override
 	public String toString() {
-		return "Seller [in=" + in + ", name=" + name + "]";
+		return "Seller [id=" + id + ", name=" + name + "]";
 	}
 
 
@@ -71,7 +71,7 @@ public class Seller {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((in == null) ? 0 : in.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -85,10 +85,10 @@ public class Seller {
 		if (getClass() != obj.getClass())
 			return false;
 		Seller other = (Seller) obj;
-		if (in == null) {
-			if (other.in != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!in.equals(other.in))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
